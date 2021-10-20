@@ -5,13 +5,14 @@ Created on Wed Oct 20 12:01:00 2021
 @author: malis
 """
 
-from flask import Flask, jsonify
-
+import json
+from flask import Flask, request, jsonify
 app = Flask(__name__)
 
-@app.route('/test')
+@app.route('/api',methods=['POST'])
 def index():
-    return jsonify({"message": "Music Scheduling"})
+    record = json.loads(request.data)
+    return "Success"
 
 if __name__ == '__main__':
     app.run()
