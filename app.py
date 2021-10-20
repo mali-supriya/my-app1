@@ -9,9 +9,9 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/test')
 def index():
-    return jsonify({"message": "hello world"})
+    return jsonify({"message": "Music Scheduling"})
 
 if __name__ == '__main__':
     app.run()
