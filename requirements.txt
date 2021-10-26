@@ -1,2 +1,4 @@
 requests
 pyscipopt
+pandas
+numpy
