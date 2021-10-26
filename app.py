@@ -17,7 +17,7 @@ def index():
     headers = {"X-AUTH-TOKEN": TOKEN}
     callback_url_input = record["callback_url_input"]
     x=str(callback_url_input)
-    response = requests.get(x,headers=headers)
+    #response = requests.get(x,headers=headers)
     #print(response.json())
     #callback_url_output = record["callback_url_output"]
     #headers['Content-Type']='application/json'
@@ -27,7 +27,7 @@ def index():
     #data = json.dumps(data)
     #response = requests.post(callback_url_output, data=data, headers=headers)
     #print(response.text)
-    return response
+    return x
 
 if __name__ == '__main__':
     app.run()
