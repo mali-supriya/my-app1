@@ -6,6 +6,7 @@ Created on Wed Oct 20 12:01:00 2021
 """
 
 import json
+import requests
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
@@ -16,8 +17,7 @@ def index():
     TOKEN=record["X-AUTH-TOKEN"]
     headers = {"X-AUTH-TOKEN": TOKEN}
     callback_url_input = record["callback_url_input"]
-    x=str(callback_url_input)
-    #response = requests.get(x,headers=headers)
+    response = requests.get(x,headers=headers)
     #print(response.json())
     #callback_url_output = record["callback_url_output"]
     #headers['Content-Type']='application/json'
@@ -27,7 +27,7 @@ def index():
     #data = json.dumps(data)
     #response = requests.post(callback_url_output, data=data, headers=headers)
     #print(response.text)
-    return x
+    return response
 
 if __name__ == '__main__':
     app.run()
