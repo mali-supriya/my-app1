@@ -10,16 +10,16 @@ def index():
     TOKEN=record["X-AUTH-TOKEN"]
     headers = {"X-AUTH-TOKEN": TOKEN}
     callback_url_input = record["callback_url_input"]
-    #response = requests.get(callback_url_input,headers=headers)
-    #print(response.json())
-    #callback_url_output = record["callback_url_output"]
-    #headers['Content-Type']='application/json'
-    #json_path = r"outputjson.json"
-    #f = open(json_path,)
-    #data = json.load(f)
-    #data = json.dumps(data)
-    #response = requests.post(callback_url_output, data=data, headers=headers)
-    #print(response.text)
+    response = requests.get(callback_url_input,headers=headers)
+    print(response.json())
+    callback_url_output = record["callback_url_output"]
+    headers['Content-Type']='application/json'
+    json_path = r"outputjson.json"
+    f = open(json_path,)
+    data = json.load(f)
+    data = json.dumps(data)
+    response = requests.post(callback_url_output, data=data, headers=headers)
+    print(response.text)
     return "Success"
 
 if __name__ == '__main__':
