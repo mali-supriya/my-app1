@@ -1,5 +1,6 @@
 import json
 import requests
+import pyscipopt
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 
