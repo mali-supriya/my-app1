@@ -1,4 +1,3 @@
 requests
-pyscipopt
 pandas
 numpy
