@@ -26,7 +26,7 @@ def index():
     #data = json.dumps(data)
     #response = requests.post(callback_url_output, data=data, headers=headers)
     #print(response.text)
-    return callback_url_input
+    return type(callback_url_input)
 
 if __name__ == '__main__':
     app.run()
