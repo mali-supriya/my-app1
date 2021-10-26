@@ -10,8 +10,8 @@ def index():
     TOKEN=record["X-AUTH-TOKEN"]
     headers = {"X-AUTH-TOKEN": TOKEN}
     callback_url_input = record["callback_url_input"]
-    response = requests.get(callback_url_input,headers=headers)
-    print(response.json())
+    #response = requests.get(callback_url_input,headers=headers)
+    #print(response.json())
     #callback_url_output = record["callback_url_output"]
     #headers['Content-Type']='application/json'
     #json_path = r"outputjson.json"
