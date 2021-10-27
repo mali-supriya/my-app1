@@ -2,7 +2,7 @@ import json
 import pyscipopt
 import requests
 from flask import Flask, request, jsonify
-from mip_optimization import Optimization
+#from mip_optimization import Optimization
 app = Flask(__name__)
 
 @app.route('/api',methods=['POST'])
@@ -17,15 +17,15 @@ def index():
         response = requests.get(callback_url_input,headers=headers)
         data=response.json()
         sch_hist = len(data['scheduleData']["schedule_history"])
-        Optimization(data,sch_hist)
-        callback_url_output = record["callback_url_output"]
-        headers['Content-Type']='application/json'
-        json_path = r"output.json"
-        f = open(json_path,)
-        data = json.load(f)
-        output = json.dumps(data)
-        response = requests.post(callback_url_output, data=output, headers=headers)
-        print(response.text)
+        #Optimization(data,sch_hist)
+        #callback_url_output = record["callback_url_output"]
+        #headers['Content-Type']='application/json'
+        #json_path = r"output.json"
+        #f = open(json_path,)
+        #data = json.load(f)
+        #output = json.dumps(data)
+        #response = requests.post(callback_url_output, data=output, headers=headers)
+        #print(response.text)
         return 'success', 200
     except:
         'bad request!', 400
