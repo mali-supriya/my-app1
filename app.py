@@ -20,7 +20,7 @@ def index():
         response = requests.get(callback_url_input,headers=headers)
         data=response.json()
         sch_hist = len(data['scheduleData']["schedule_history"])
-        opt
+        opt()
         #Optimization(data,sch_hist)
         #callback_url_output = record["callback_url_output"]
         #headers['Content-Type']='application/json'
