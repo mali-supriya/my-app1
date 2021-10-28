@@ -332,10 +332,10 @@ def Optimization(data,sch_hist):
 
                     if len(cons_all_sng)>1:
                         m.addCons(quicksum(cons_all_sng)==0)
-    exact_cons()
-    min_constraints
-    max_constraints()
-    range_constraints()
+    #exact_cons()
+    #min_constraints
+    #max_constraints()
+    #range_constraints()
     inclusion()
     exclusion()
     if sch_hist!=0:
