@@ -10,7 +10,7 @@ def Optimization(data,sch_hist,all_status,schedule_id,headers):
     df1 = pd.json_normalize(data)
     status={"status_id": 3,"schedule_id": schedule_id}
     print(status)
-    output = json.dumps(data)
+    status = json.dumps(status)
     headers['Content-Type']='application/json'
     response = requests.post(update_status, data=status, headers=headers)
     constraint_type=pd.json_normalize(
@@ -460,12 +460,12 @@ def Optimization(data,sch_hist,all_status,schedule_id,headers):
         with open('output.json', 'w') as f:
             json.dump(output, f)
         status={"status_id": 6,"schedule_id": schedule_id}
-        output = json.dumps(data)
+        status = json.dumps(status)
         headers['Content-Type']='application/json'
         response = requests.post(update_status, data=status, headers=headers)
     else:
         status={"status_id": 5,"schedule_id": schedule_id}
-        output = json.dumps(data)
+        status = json.dumps(status)
         headers['Content-Type']='application/json'
         response = requests.post(update_status, data=status, headers=headers)
         print("model infeasible")
