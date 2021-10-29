@@ -475,7 +475,7 @@ def Optimization(data,sch_hist,all_status,schedule_id,headers):
             output=[]
         return output
     except Exception as e: 
-        lines=[e]
+        lines=[str(e)]
         print(lines)
         with open('readme.txt', 'a') as f:
             f.writelines('\n'.join(lines)+ '\n')
