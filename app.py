@@ -12,7 +12,7 @@ def index():
         record = json.loads(request.data)
         print(record)
         schedule_id=record["schedule_id"]
-        TOKEN=record["auth_tokan"]
+        TOKEN=record["auth_token"]
         headers = {"X-AUTH-TOKEN": TOKEN}
         callback_url_input = record["callback_url_input"]
         callback_url_input = callback_url_input+"?id="+str(schedule_id)
