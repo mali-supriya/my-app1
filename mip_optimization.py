@@ -474,7 +474,11 @@ def Optimization(data,sch_hist,all_status,schedule_id,headers):
             print("model infeasible")
             output=[]
         return output
-    except:
+    except Exception as e: 
+        lines=[e]
+        print(lines)
+        with open('readme.txt', 'a') as f:
+            f.writelines('\n'.join(lines)+ '\n')
         status={"status_id": 4,"schedule_id": schedule_id}
         status = json.dumps(status)
         headers['Content-Type']='application/json'
