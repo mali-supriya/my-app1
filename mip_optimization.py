@@ -14,6 +14,9 @@ def Optimization(data,sch_hist,all_status,schedule_id,headers):
         status = json.dumps(status)
         headers['Content-Type']='application/json'
         response = requests.post(update_status, data=status, headers=headers)
+        lines = ["status update -"+str(response)]
+        with open('readme.txt', 'a') as f:
+            f.writelines('\n'.join(lines)+ '\n')
         constraint_type=pd.json_normalize(
             data['scheduleData'], 
             record_path =['constraint_type'],errors='ignore')
