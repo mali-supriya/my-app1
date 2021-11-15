@@ -11,7 +11,7 @@ from flask import request
 import json
 import requests
 import pandas as pd
-from mip_optimization import Optimization
+from mip_optimization_m import Optimization
 
 class AfterResponse:
     def __init__(self, app=None):
